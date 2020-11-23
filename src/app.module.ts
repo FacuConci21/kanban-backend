@@ -2,7 +2,6 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ProjectModule } from './project/project.module';
-import { ProjectService } from './project/project.service';
 import { MongooseModule } from "@nestjs/mongoose";
 
 @Module({
@@ -11,6 +10,6 @@ import { MongooseModule } from "@nestjs/mongoose";
     { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true }),
   ],
   controllers: [AppController],
-  providers: [AppService, ProjectService],
+  providers: [AppService],
 })
 export class AppModule {}
