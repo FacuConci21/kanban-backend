@@ -3,7 +3,6 @@ import { Res, Body, Param, Query, NotFoundException, } from "@nestjs/common";
 
 import { ProjectService } from "./project.service";
 import { CreateProjectDTO } from "./dtos/create-project.dto";
-import { identity } from 'rxjs';
 
 @Controller('project')
 export class ProjectController {
