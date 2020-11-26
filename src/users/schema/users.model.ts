@@ -3,7 +3,7 @@ import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 @Schema({ timestamps: true })
 export class SUsers {
 
-    @Prop({ required: true, type: String, trim: true, })
+    @Prop({ required: true, type: String, trim: true, match: /.+\@.+\..+/, })
     email: string;
 
     @Prop({ required: true, type: String, trim: true, minlength: 8, })
