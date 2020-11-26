@@ -1,6 +1,6 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 
-Schema({ timestamps: true })
+@Schema({ timestamps: true })
 export class SUsers {
 
     @Prop({ required: true, type: String, trim: true, })

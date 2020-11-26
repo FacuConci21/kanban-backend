@@ -8,16 +8,27 @@ import { IUsers } from "./interfaces/users.interface";
 @Injectable()
 export class UsersService {
 
-    constructor(@InjectModel('Users') private userMode: Model<IUsers>) {}
+    constructor(@InjectModel('Users') private userModel: Model<IUsers>) {}
 
-    findAll() {}
+    async findAll(): Promise<IUsers[]> {
+        return await this.userModel.find();
+    }
 
-    findOne() {}
+    async findOne(email: string): Promise<IUsers> {
+        return await this.userModel.findOne({ email });
+    }
 
-    createOne() {}
+    async createOne(userDTO: CreateUserDTO) {
+        const newUser = new this.userModel(userDTO);
+        return await newUser.save();
+    }
 
-    updateOne() {}
+    async updateOne(_id: string, userDTO: CreateUserDTO): Promise<IUsers> {
+        return await this.userModel.findByIdAndUpdate(_id, userDTO, { new: true, });
+    }
 
-    deleteOne() {}
-    
+    async deleteOne(_id: string): Promise<IUsers> {
+        return await this.userModel.findByIdAndDelete(_id);
+    }
+
 }
