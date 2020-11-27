@@ -1,5 +1,5 @@
 import { Injectable, } from '@nestjs/common';
-import { Model, } from "mongoose";
+import { Model, NativeError, } from "mongoose";
 import { InjectModel, } from "@nestjs/mongoose";
 
 import { CreateProjectDTO, } from "./dtos/create-project.dto";
@@ -10,8 +10,8 @@ export class ProjectService {
 
     constructor(@InjectModel('Projects') private projectModel: Model<IProject>) {}
 
-    async findAll(projectName: string = ''): Promise<IProject[]> {
-        return await this.projectModel.find({}, null, { sort: 'createdAt' });
+    async findAll(fill: any = {}): Promise<IProject[]> {
+        return await this.projectModel.find(fill, null, { sort: 'createdAt' });
     }
 
     async findOne(_id: string): Promise<IProject> {

@@ -12,11 +12,9 @@ export class SUsers {
     @Prop({ required: true, type: String, trim: true, minlength: 8, })
     password: string;
 
-    @Prop({ type: String, trim: true, default: 'user'+ Date.now() })
+    @Prop({ type: String, trim: true, default: 'user'+ Date.now(), })
     fullName: string;
 
-    @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Projects'}], })
-    paperBin: SProjects[];
 }
 
 export const UsersSchema = SchemaFactory.createForClass(SUsers);

@@ -19,8 +19,8 @@ export class ProjectController {
     }
 
     @Get()
-    async getProjects(@Res() res, @Query('name') name: string, ) {
-        const allProducts = await this.productService.findAll(name);
+    async getProjects(@Res() res, @Query('name') name: string, @Query() cueri, ) {
+        const allProducts = await this.productService.findAll();
         
         if (!allProducts || allProducts.length == 0) 
             throw new NotFoundException('Empty result', 'No product has been returned.');

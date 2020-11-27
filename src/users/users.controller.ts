@@ -20,7 +20,7 @@ export class UsersController {
     }
 
     @Get()
-    async getUsers(@Res() res, ) {
+    async getUsers(@Res() res, @Query() fills, ) {
         const users = await this.usersService.findAll();
 
         return res.json({
