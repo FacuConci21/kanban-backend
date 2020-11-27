@@ -7,6 +7,7 @@ import { AppService } from './app.service';
 
 import { ProjectModule } from './project/project.module';
 import { UsersModule } from './users/users.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -15,6 +16,7 @@ import { UsersModule } from './users/users.module';
     ConfigModule.forRoot({ isGlobal: true, }),
     MongooseModule.forRoot(`mongodb://${process.env.DB_HOST}/${process.env.DB_NAME}`,
     { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true }),
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],
