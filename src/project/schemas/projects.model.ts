@@ -18,6 +18,9 @@ export class SProjects {
     @Prop({ type: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Users', }], })
     members: SUsers[];
 
+    @Prop({ type: Boolean, default: false, })
+    deleted: boolean;
+
 }
 
 export const ProjectsSchema = SchemaFactory.createForClass(SProjects);

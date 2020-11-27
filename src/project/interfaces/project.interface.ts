@@ -7,6 +7,7 @@ export interface IProject extends Document {
     description: string;
     creator: SUsers;
     members: SUsers[];
+    deleted: boolean;
     cretedAt: Date;
     updatedAt: Date;
 }

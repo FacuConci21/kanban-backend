@@ -6,6 +6,7 @@ export class CreateProjectDTO {
     description: string;
     creator: SUsers;
     members: SUsers[];
+    deleted: boolean;
     cretedAt: Date;
     updatedAt: Date;
 }
