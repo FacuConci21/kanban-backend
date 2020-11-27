@@ -1,1 +1,1 @@
-export interface Tasks {}
+export interface ITasks {}

@@ -1,1 +1,1 @@
-export interface States {}
+export interface IStates {}
