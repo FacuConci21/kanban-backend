@@ -1,8 +1,14 @@
 import { Prop, Schema, SchemaFactory } from "@nestjs/mongoose";
 
 @Schema({ timestamps: true, })
-export class S {
+export class SState {
+
+    @Prop({ required:true, type: String, })
+    name: string;
+
+    @Prop({ type: String, default: '000000' })
+    color: string;
 
 }
 
-// export const Schema = SchemaFactory.createForClass();
+export const StateSchema = SchemaFactory.createForClass(SState);
