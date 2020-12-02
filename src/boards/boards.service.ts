@@ -18,4 +18,17 @@ export class BoardsService {
     async findAll(): Promise<IBoards[]> {
         return await this.boardModel.find();
     }
+
+    async findOne(id: string): Promise<IBoards> {
+        return await this.boardModel.findById(id);
+    }
+
+    async updateOne(id: string, boardDTO: CreateBoardDTO): Promise<IBoards> {
+        return await this.boardModel.findByIdAndUpdate(id, boardDTO, { new: true, });
+    }
+
+    async deleteOne(id: string): Promise<IBoards> {
+        return await this.boardModel.findByIdAndDelete(id);
+    }
+
 }
