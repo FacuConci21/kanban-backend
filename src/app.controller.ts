@@ -1,5 +1,4 @@
 import { Body, Controller, Get, Post, Request, UseGuards, } from '@nestjs/common';
-import { AuthGuard } from "@nestjs/passport";
 
 import { AppService } from './app.service';
 import { AuthService } from './auth/auth.service';
@@ -19,7 +18,7 @@ export class AppController {
   }
 
   @Get()
-  getHello(): string {
+  getHello(@Request() req, ) {
     return this.appService.getHello();
   }
 }
