@@ -10,7 +10,7 @@ export class UsersService {
 
     constructor(@InjectModel('Users') private userModel: Model<IUsers>) {}
 
-    async findAll(): Promise<IUsers[]> {
+    async findAll(fill?: CreateUserDTO): Promise<IUsers[]> {
         return await this.userModel.find();
     }
 

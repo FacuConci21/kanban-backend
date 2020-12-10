@@ -1,0 +1,41 @@
+src/
+|
+----node_modules/
+----project/
+|	----dto/
+|	----interface/
+|	----schema/
+|	module.ts
+|	controller.ts
+|	service.ts
+----users/
+|	----dto/
+|	----interface/
+|	----schema/
+|	module.ts
+|	controller.ts
+|	service.ts
+----boards/
+|	----dtos/
+|		----boards.dto.ts
+|		----states.dto.ts
+|		----tasks.dto.ts
+|	----interfaces/
+|		----boards.interface.ts
+|		----states.interface.ts
+|		----tasks.interface.ts
+|	----schemas/
+|		----boards.schema.ts
+|		----states.schema.ts
+|		----tasks.schema.ts
+|	----states/
+|		----states.module.ts
+|		----states.service.spec.ts
+|		----states.service.ts
+|   ----tasks/
+|		----tasks.module.ts
+|		----tarks.service.spec.ts
+|		----tasks.service.ts
+|	module.ts
+|	controller.ts
+|	service.ts

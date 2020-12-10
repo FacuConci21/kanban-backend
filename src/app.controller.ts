@@ -4,7 +4,7 @@ import { AuthGuard } from "@nestjs/passport";
 import { AppService } from './app.service';
 import { LocalAuthGuard } from './auth/local-auth.guard';
 
-@Controller()
+@Controller('api')
 export class AppController {
   constructor(private readonly appService: AppService) {}
 

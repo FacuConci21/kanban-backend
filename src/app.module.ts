@@ -8,6 +8,7 @@ import { AppService } from './app.service';
 import { ProjectModule } from './project/project.module';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
+import { BoardsModule } from './boards/boards.module';
 
 @Module({
   imports: [
@@ -17,6 +18,7 @@ import { AuthModule } from './auth/auth.module';
     MongooseModule.forRoot(`mongodb://${process.env.DB_HOST}/${process.env.DB_NAME}`,
     { useNewUrlParser: true, useFindAndModify: false, useUnifiedTopology: true }),
     AuthModule,
+    BoardsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

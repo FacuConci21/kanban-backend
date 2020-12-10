@@ -5,6 +5,11 @@
 <p>This project is about a kanban projects manajer for companies. Is the backend develop.</p>
 <p>A REST API with CRUD functions.</p>
 
+## Files Descriptions
+
+<p>collections-relations.png: data definition diagram.</p>
+<p>directory-tree.txt: project directory representation in .txt format</p>
+
 ## Installation
 
 ```bash
