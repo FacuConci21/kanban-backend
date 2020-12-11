@@ -21,6 +21,7 @@ export class AppController {
   @UseGuards(JwtAuthGuard)
   @Get('profile')
   getHello(@Request() req, ) {
+    // Here I stagnate. The route respond "unauthorized" to all users.
     return req.user;
   }
 }
