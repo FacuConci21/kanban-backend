@@ -3,7 +3,7 @@
 ## Description
 
 <p>This project is about a kanban projects manajer for companies. Is the backend develop.</p>
-<p>A REST API with CRUD functions.</p>
+<p>A REST API with CRUD functions, local and jwt authorization, .</p>
 
 ## Files Descriptions
 
