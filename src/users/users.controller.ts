@@ -20,13 +20,13 @@ export class UsersController {
     }
 
     @Get()
-    async getUsers(@Res() res, @Query() fills, ) {
+    async getUsers(@Query() fills?, ) {
         const users = await this.usersService.findAll();
 
-        return res.json({
+        return {
             message: 'received',
             users,
-        });
+        };
     }
 
     @Get('/user')
