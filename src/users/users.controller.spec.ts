@@ -23,7 +23,11 @@ describe('UsersController', () => {
     it('should return all the records of user´s colletion', async () => {
       const result = [];
 
-      jest.spyOn(servive, 'findAll').mockImplementation(() => result);
+      //Type 'any[]' is missing the following properties from type 
+      //'Promise<IUsers[]>': then, catch, [Symbol.toStringTag], finallyts(2739)
+      /*
+        jest.spyOn(servive, 'findAll').mockImplementation(() => result);
+      */
 
       expect(await controller.getUsers()).toBe(result);
     })
