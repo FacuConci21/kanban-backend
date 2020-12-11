@@ -1,4 +1,5 @@
 import { Module } from '@nestjs/common';
+import { APP_GUARD } from '@nestjs/core';
 import { MongooseModule } from "@nestjs/mongoose";
 import { ConfigModule } from "@nestjs/config";
 
@@ -9,6 +10,7 @@ import { ProjectModule } from './project/project.module';
 import { UsersModule } from './users/users.module';
 import { AuthModule } from './auth/auth.module';
 import { BoardsModule } from './boards/boards.module';
+import { JwtAuthGuard } from './auth/guards/jwt-auth.guard';
 
 @Module({
   imports: [
@@ -21,6 +23,8 @@ import { BoardsModule } from './boards/boards.module';
     BoardsModule,
   ],
   controllers: [AppController],
-  providers: [AppService],
+  providers: [AppService ,
+    // { provide: APP_GUARD, useClass: JwtAuthGuard },
+  ],
 })
 export class AppModule {}
